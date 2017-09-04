@@ -1,43 +1,58 @@
 <div fxLayout="row" fxLayoutAlign="center" fxFlexFill>
     <div fxFlex="75" fxFlex.gt-md="40" fxLayout="column" fxLayoutAlign="center" fxFlexFill>
         <div fxFlex="80" fxFlex.gt-md="65">
-            <md-card>
-                <md-card-header class="full-width" fxLayoutAlign="center">
-                    <md-card-title fxLayoutAlign="center">
-                        <div fxFlex="50" style="text-align: center;" class="full-width">
-                            <img src="assets/images/logo.png" style="height: 180px;"/>
-                        </div>
-                    </md-card-title>
-                    <md-card-subtitle fxLayoutAlign="center">
-                        <div fxFlex="80" style="text-align: center;" class="full-width">
-                            <h1>SIATH</h1>
-                            <h2>Sistema de Administración del Talento Humano</h2>
-                        </div>
-                    </md-card-subtitle>
-                </md-card-header>
-                <md-card-content>
-                    <div fxLayout="row" fxLayoutAlign="center">
-                        <div fxFlex fxFlex.gt-md="80" fxLayout="column">
-                            <div fxFlex>
-                                <md-input-container class="full-width">
-                                    <input mdInput required placeholder="Usuario"/>
-                                </md-input-container>
+            <form #loginForm="ngForm" (ngSubmit)="doLogin()">
+                <md-card>
+                    <md-card-header class="full-width" fxLayoutAlign="center">
+                        <md-card-title fxLayoutAlign="center">
+                            <div fxFlex="50" style="text-align: center;" class="full-width">
+                                <img src="assets/images/logo.png" style="height: 180px;"/>
                             </div>
-                            <div fxFlex>
-                                <md-input-container class="full-width">
-                                    <input mdInput required type="password" placeholder="Contraseña"/>
-                                </md-input-container>
+                        </md-card-title>
+                        <md-card-subtitle fxLayoutAlign="center">
+                            <div fxFlex="80" style="text-align: center;" class="full-width">
+                                <h1>SIATH</h1>
+                                <h2>Sistema de Administración del Talento Humano</h2>
+                            </div>
+                        </md-card-subtitle>
+                    </md-card-header>
+                    <md-card-content>
+                        <div fxLayout="row" fxLayoutAlign="center">
+                            <div fxFlex fxFlex.gt-md="80" fxLayout="column">
+                                <div fxFlex>
+                                    <md-input-container class="full-width">
+                                        <input mdInput required type="text" placeholder="Usuario" name="login" [formControl]="loginFormControl" [(ngModel)]="login"/>
+                                        <!--<i class="fa fa-user"></i>-->
+                                        <md-icon class="fa fa-user"> </md-icon>
+                                        <md-error *ngIf="loginFormControl.hasError('pattern')">
+                                            Por favor, ingrese un nombre de usuario válido
+                                        </md-error>
+                                        <md-error *ngIf="loginFormControl.hasError('required')">
+                                            Por favor, ingrese un nombre de usuario para continuar
+                                        </md-error>
+                                    </md-input-container>
+                                </div>
+                                <br>
+                                <div fxFlex>
+                                    <md-input-container class="full-width">
+                                        <input mdInput required type="password" placeholder="Contraseña" name="password" [formControl]="passwordFormControl" [(ngModel)]="password"/>
+                                        <md-icon class="fa fa-key"> </md-icon>
+                                        <md-error *ngIf="passwordFormControl.hasError('required')">
+                                            Por favor, ingrese una contraseña para continuar
+                                        </md-error>
+                                    </md-input-container>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </md-card-content>
-                <md-card-actions fxLayoutAlign="center">
-                    <button md-raised-button class="login" type="submit">Iniciar Sesión</button>
-                </md-card-actions>
-                <md-card-footer fxLayoutAlign="center" class="footer">
-                    © 2017 - GAD Municipal de Santo Domingo
-                </md-card-footer>
-            </md-card>
+                    </md-card-content>
+                    <md-card-actions fxLayoutAlign="center">
+                        <button md-raised-button class="login" type="submit">Iniciar Sesión</button>
+                    </md-card-actions>
+                    <md-card-footer fxLayoutAlign="center" class="footer">
+                        © 2017 - GAD Municipal de Santo Domingo
+                    </md-card-footer>
+                </md-card>
+            </form>
         </div>
     </div>
 </div>

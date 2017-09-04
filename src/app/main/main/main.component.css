@@ -1,0 +1,58 @@
+div{
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+}
+
+.header_footer_pag{
+    color: white;
+    background: /*#337ab7*/ #333333;
+    font-size: 14px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.body_pag{
+    align-content: center;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+div.title{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.images{
+    width: 100px;
+}
+
+md-grid-list.grid {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+md-grid-tile.grid-tile {
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 20px 0 rgba(0,0,0,.12);
+}
+
+md-icon {
+    width: 95%;
+    height: 95%;
+}
+
+.grid-footer{
+    text-align: center;
+}

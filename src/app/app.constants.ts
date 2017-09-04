@@ -1,1 +1,1 @@
-export const backendServerUrl: string = "http://localhost/siath/";
+export const backendServerUrl: string = "http://localhost/siath/index.php";
